@@ -14,8 +14,17 @@ export default function App(){
     <BrowserRouter>
     <Navbar />
     <Routes>
-      
+      <Route path="/" element={<Home />} />
+      <Route path="/catalogo" element={<Catalogo />} />
+      <Route path="/producto/:id" element={<Detalle />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/checkout" element={
+        <ProtectedRoute>
+          <Checkout/>
+        </ProtectedRoute>
+       } />
+       <Route path="+" element={<NotFound />} />
     </Routes>
     </BrowserRouter>
-  )
+  );
 }
